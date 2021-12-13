@@ -128,7 +128,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li><a href='About.html'>About</a><li><a href='HW1.html'>HW1</a><li class='has-children'><a href='HW2.html'>HW2</a><ul class='dropdown'><li><a href='test.html'>test</a></li></ul><li><a href='HW3.html'>HW3</a><li class='has-children'><a href='Final Project.html'>Final Project</a><ul class='dropdown'><li><a href='run.html'>run</a></li>
+                     <li><a href='About.html'>About</a><li class='has-children'><a href='HW1.html'>HW1</a><ul class='dropdown'><li class='has-children'><a href='run.html'>run</a><ul class='dropdown'><li><a href='W12 demo.html'>W12 demo</a></li></li></ul></ul><li class='has-children'><a href='HW2.html'>HW2</a><ul class='dropdown'><li><a href='test.html'>test</a></li></ul><li><a href='HW3.html'>HW3</a><li class='has-children'><a href='Exam.html'>Exam</a><ul class='dropdown'><li><a href='w13.html'>w13</a></li></ul><li><a href='Final Project.html'>Final Project</a></li>
                       </ul>
                 </nav>
               </div>
@@ -139,7 +139,7 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">HW3 << <a href='HW3.html'>Previous</a> <a href='run.html'>Next</a> >> run<br /><h1>Final Project</h1>
+    <div id="tipue_search_content">w13 << <a href='w13.html'>Previous</a> <br /><h1>Final Project</h1>
 <p>Final Project 佔學期成績 30%</p>
 <p><span style="background-color: #ffff99;">Final Project 必須在 2022.01.05 22:00 之前完成</span>.</p>
 <p><a href="https://github.com/mdecourse/cp2021/discussions/11">Final Project 具體項目成果回報區</a>將於 2021.11.09 開啟, 於 <span style="background-color: #ff99cc;">2022.01.05 22:00 關閉</span></p>
@@ -160,7 +160,23 @@ img.add_border {
 <p style="padding-left: 30px;"><a href="https://github.com/leereilly/games">https://github.com/leereilly/games</a></p>
 <p style="padding-left: 30px;"><a href="https://bmsleight.github.io/brython-blocks/">https://bmsleight.github.io/brython-blocks/</a></p>
 <p style="padding-left: 60px;"><a href="https://github.com/mdecourse/brython-blocks">https://github.com/mdecourse/brython-blocks</a></p>
-<br />HW3 << <a href='HW3.html'>Previous</a> <a href='run.html'>Next</a> >> run</div>
+<p><!-- 以下的表單與按鈕與前面的 Javascript doSave 函式以及 FileSaver.min.js 互相配合 --></p>
+<!-- 存擋表單開始 --><form><label>Filename: <input id="kw_filename" placeholder="input file name" type="text"/>.py</label> <input onclick="doSave('kw_py_src', 'kw_filename');" type="submit" value="Save"/></form><!-- 存擋表單結束 -->
+<p></p>
+<!-- 執行與清除按鈕開始 -->
+<p><button id="kw_run">Run</button> <button id="kw_show_console">Output</button> <button id="kw_clear_console">清除輸出區</button><button id="clear_bd">清除繪圖區</button><button onclick="window.location.reload()">Reload</button></p>
+<!-- 執行與清除按鈕結束 -->
+<p></p>
+<!-- 程式執行 ouput 區 -->
+<div style="width: 100%; height: 100%;"><textarea autocomplete="off" id="kw_console"></textarea></div>
+<!-- Brython 程式執行的結果, 都以 brython_div 作為切入位置 -->
+<div id="brython_div"></div>
+<!-- 導入 gearUtils-0.9.js Cango 齒輪繪圖程式庫 -->
+<script src="https://mde.tw/cp2021/cmsimde/static/Cango-24v03-min.js"></script>
+<script src="https://mde.tw/cp2021/cmsimde/static/gearUtils-09.js"></script>
+<script src="https://mde.tw/cp2021/cmsimde/static/SVGpathUtils-6v03-min.js"></script>
+<script src="https://mde.tw/cp2021/cmsimde/static/sylvester.js"></script>
+<script src="https://mde.tw/cp2021/cmsimde/static/PrairieDraw.js"></script><br />w13 << <a href='w13.html'>Previous</a> </div>
         
     <!-- footer -->
       <div class="container">
