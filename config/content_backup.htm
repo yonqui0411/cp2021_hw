@@ -121,7 +121,7 @@ function doSave(storage_id, filename){
 <script src="https://mde.tw/cp2021/cmsimde/static/sylvester.js"></script>
 <script src="https://mde.tw/cp2021/cmsimde/static/PrairieDraw.js"></script>
 </p>
-<p><button id="add1to100">add 1 to 100</button><button id="p261">p261</button><button id="rocflag">ROC flag</button><button id="red">red</button></p>
+<p><button id="add1to100">add 1 to 100</button><button id="p261">p261</button><button id="rocflag">ROC flag</button><button id="red">red</button><button id="snake">snake</button></p>
 <p><!-- ######################  editor1 開始 ###################### --></p>
 <p><!-- 用來顯示程式碼的 editor 區域 --></p>
 <div id="kw_editor1" style="width: 600px; height: 300px;"></div>
@@ -220,6 +220,11 @@ red_url = "https://gist.githubusercontent.com/yonqui0411/b5e6a1e24cccc0ea72490b1
 red = button2(red_url)
 doc["red"].bind("click", red.do)
 ################################## red end
+################################## snake start
+snake_url = "https://gist.githubusercontent.com/yonqui0411/808efb0af8082935eea583cdda7f87b9/raw/f4ed6e3c4328ae735ea82ff5f6d48e310ad454c0/snake"
+snake = button2(snake_url)
+doc["snake"].bind("click", snake.do)
+################################## snake end
 </script>
 </p><h1>HW2</h1>
 <p>HW2 - 可攜程式系統與個人網站佔學期成績 20%.</p>
