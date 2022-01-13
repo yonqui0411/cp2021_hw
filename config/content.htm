@@ -64,7 +64,78 @@ function doSave(storage_id, filename){
 <div style="width: 100%; height: 100%;"><textarea autocomplete="off" id="kw_console1"></textarea></div>
 <p><!-- Brython 程式執行的結果, 都以 brython_div 作為切入位置 --></p>
 <!-- 這裡的畫布 id 為 brython_div -->
-<h2>text</h2>
+<div id="brython_div"></div>
+<p><!-- ######################  editor1 結束 ###################### --></p>
+<!-- 以下可以開始利用 editor1 的設定編寫對應 Brython 程式 -->
+<script type="text/python3">
+from browser import document as doc
+import ace
+
+# 清除畫布
+def clear_bd1(ev):
+    # 注意這裡清除的畫布 id 為 brython_div
+    bd = doc["brython_div"]
+    bd.clear()
+Ace1 = ace.Editor(editor_id="kw_editor1", console_id="kw_console1", container_id="kw__container1", storage_id="kw_py_src1" )
+# 從 gist 取出程式碼後, 放入 editor 作為 default 程式
+def run1():
+    # 利用 get 取下 src 變數值
+    try:
+        url = doc.query["src"]
+    except:
+        url = "https://gist.githubusercontent.com/mdecourse/0229a8a017091476a79700b8a190f185/raw/c3a6deaf717f8f2739a4b1392a5ab10936e9693a/from_1_add_to_10_1.py"
+    prog = open(url).read()
+
+    # 將程式載入編輯區
+    Ace1.editor.setValue(prog)
+    Ace1.editor.scrollToRow(0)
+    Ace1.editor.gotoLine(0)
+    # 直接執行程式
+    #ns = {'__name__':'__main__'}
+    #exec(prog, ns)
+    # 按下 run 按鈕
+    Ace1.run()
+
+# 執行程式, 顯示輸出結果與清除輸出結果及對應按鈕綁定
+doc['kw_run1'].bind('click', Ace1.run)
+doc['kw_show_console1'].bind('click', Ace1.show_console)
+doc['kw_clear_console1'].bind('click', Ace1.clear_console)
+doc['clear_bd1'].bind('click', clear_bd1)
+# 呼叫函式執行
+run1()
+</script>
+<!-- 以上為內建程式, 頁面可透過 ?src=gist_url 執行 -->
+<p><!-- add 1 to 100 開始 -->
+<script type="text/python3">
+from browser import document as doc
+import ace
+
+# 清除畫布
+def clear_bd1(ev):
+    bd = doc["brython_div1"]
+    bd.clear()
+
+# 利用 ace 中的 Editor 建立 Ace 物件, 其中的輸入變數分別對應到頁面中的編輯區物件
+Ace2 = ace.Editor(editor_id="kw_editor1", console_id="kw_console1", container_id="kw__container1", storage_id="kw_py_src1" )
+
+class button2:
+    def __init__(self, url):
+        self.url = url
+
+    # 記得加入 event 輸入變數
+    def do(self,ev):
+        Ace2.editor.setValue(open(self.url).read())
+        Ace2.editor.scrollToRow(0)
+        Ace2.editor.gotoLine(0)
+        Ace2.run()
+red_url = "https://gist.githubusercontent.com/yonqui0411/b5e6a1e24cccc0ea72490b131733cbff/raw/9d1eaebf6911ec36463b77457512099fd2c5afba/red"
+red= button2(red_url)
+doc["red"].bind('click', red.do)
+red2_url = "https://gist.githubusercontent.com/yonqui0411/323db8adab4261733df66cb30e0d5286/raw/77ba4687377f63f3704c8da6675e691f6a30c522/hw1-2.py"
+red2= button2(red2_url)
+doc["red2"].bind('click', red2.do)
+</script>
+</p><h2>text</h2>
 <p>英打</p>
 <pre>Every gist is a repository,which means that it can be fork=ed and cloned.If you are sogned in to 
 GitHub when you create a gist,the gist will be associater with your account and you will see it in your
