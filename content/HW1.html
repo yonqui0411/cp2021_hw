@@ -128,7 +128,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li><a href='About.html'>About</a><li class='has-children'><a href='HW1.html'>HW1</a><ul class='dropdown'><li><a href='run1.html'>run1</a></li></ul><li class='has-children'><a href='HW2.html'>HW2</a><ul class='dropdown'><li><a href='run2.html'>run2</a><li><a href='test.html'>test</a></li></ul><li><a href='HW3.html'>HW3</a><li class='has-children'><a href='Exam.html'>Exam</a><ul class='dropdown'><li><a href='w13.html'>w13</a></li></ul><li><a href='Final Project.html'>Final Project</a></li>
+                     <li><a href='About.html'>About</a><li class='has-children'><a href='HW1.html'>HW1</a><ul class='dropdown'><li><a href='text.html'>text</a><li><a href='run1.html'>run1</a></li></ul><li class='has-children'><a href='HW2.html'>HW2</a><ul class='dropdown'><li><a href='run2.html'>run2</a><li><a href='test.html'>test</a></li></ul><li><a href='HW3.html'>HW3</a><li><a href='期末考試.html'>期末考試</a><li class='has-children'><a href='Exam.html'>Exam</a><ul class='dropdown'><li><a href='w13.html'>w13</a></li></ul><li><a href='Final Project.html'>Final Project</a></li>
                       </ul>
                 </nav>
               </div>
@@ -139,81 +139,65 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">About << <a href='About.html'>Previous</a> <a href='run1.html'>Next</a> >> run1<br /><h1>HW1</h1>
-<p>HW1 - 網際動畫與 touch typing 佔學期成績 20%.</p>
-<p><a class="wb-break-all" href="https://gist.github.com/yonqui0411/c2130c3cf1fda155e0802972aa4d03eb#file-1"><strong class="user-select-contain gist-blob-name css-truncate-target">1.將左右碰撞移動的紅色方塊, 改為先移動到水平畫面中心點位置後, 接著上下碰撞移動</strong></a></p>
-<pre>1.from browser import html
-2.from browser import document as doc
-3.import browser.timer
-4.
-5.canvas = html.CANVAS(width = 400, height = 100)
-6.canvas.id = "game-board3"
-7.brython_div = doc["brython_div3"]
-8.brython_div &lt;= canvas
-9.ctx = canvas.getContext("2d")
-10.px = 0
-11.py = 50
-12.width = 20
-13.height = 20
-14.speed = 2
-15.sp = 2
-16.
-17.def game():
-18.    global px, py, width, height, speed , sp
-19.    ctx.clearRect(px, py, width, height)
-20.    ctx.fillStyle = "red"
-21.    px += speed
-22.    if (px + width) &gt; 200:
-23.        speed = 0
-24.        py += sp
-25.    if py &lt; 0 or ( py + height ) &gt; canvas.height:
-26.        sp = -sp
-27.    ctx.fillRect(px, py, width, height)
-28.    
-29.browser.timer.set_interval(game, 10)<br/><br/><a href="https://gist.github.com/yonqui0411/655c2c96b54cd2d8f02191c3f801be2b"><strong class="css-truncate-target">中打</strong></a></pre>
-<pre>gist是github的一個子服務，且任何人都可以使用這個服務，不論你是否擁有github帳號。以開發者的角度來說，最基本的功能就是可以分享片段的原始碼。有別於github的repository，gist可以分享專案中的某一個小檔案中的原始碼，且擁有私人的選項，讓別人不會搜尋到你的giat。在github的repository設定private是要付費的，但在gist是不需要的。除此之外gist還有須多用處，包括可以直接執行我們就來--
-介紹吧!
-
-4.02<br/><br/><br/><a href="https://gist.github.com/yonqui0411/288fc597bdc46544872adb7901f44e9e"><strong class="css-truncate-target">英打</strong></a></pre>
-<pre>Every gist is a repository,which means that it can be fork=ed and cloned.If you are sogned in to 
-GitHub when you create a gist,the gist will be associater with your account and you will see it in your
-list of gist when you navigate to your gist gome page.
-
-Gist can be public or secret.Public gists show up in Discover,when people can browse new gist as
-they're created. They're also searchable.Secret gist aren't private. If you send
-the URL of a secret gist to a friend, they'11 be able to see it.However,if someone you don't know
-discovers the URL,they11 also be able to see your gist.If you need to keep your code awar from
-prying eyes,you may want to create a ptivate repository instead.
-
-After creating a gist,you cannot convert it from public to secret.
-
-You'11 receive a notification when:
-
-You are the author of a gist.
-Someone mentions you im a gist.
-You subscibe to a gist,by clicking Subscibe at the top og any gist.
-
-You can pin gists to your profile so other people can see them easiler.For more information,see
-"Pinning iteam to your profile."
-
-You can discover public gists others have created by the gist home page and clicking.ALL
-Gist.This will take you to a page of all gists sorted and displayed by time of creation or update.You
-can also search gists by lauguage with Gist Search.Gist search uses the same search syntax as code
-search.
-
-Since gists are Git repositories,you can view their full commit hisroty, complete with diffs.You can
-also frok or clone gists.For more information,see "Forking and cloneing gists".
-
-You can download a ZIP file of  a gist by clicking the Download ZIP button at the top of the gist.You
-can embed a gist in any text filed that supports Javascript,such as a blog post.To get the embed
-code,click the clipboard icon next to the Embed URL of a gist.To embed a sepcific gist file,append
-the Embed URL with ?file=FILENAME.
-
-Gist supports mapping GeoJSON files.These maps are displayed in embedded gist,so you can easily
-share and embed maps.For more information,see"Working with non-code files."
-
-28min57.88s</pre>
-<br />About << <a href='About.html'>Previous</a> <a href='run1.html'>Next</a> >> run1</div>
+    <div id="tipue_search_content">About << <a href='About.html'>Previous</a> <a href='text.html'>Next</a> >> text<br /><h1>HW1</h1>
+<p></p>
+<p><a href="./../downloads/w12demo.txt"></a></p>
+<!-- 導入 brython 程式庫 -->
+<script src="./../cmsimde/static/brython.js"></script>
+<script src="./../cmsimde/static/brython_stdlib.js"></script>
+<!-- 啟動 Brython -->
+<script>
+window.onload=function(){
+brython({debug:1, pythonpath:['./../cmsimde/static/','./../downloads/py/']});
+}
+</script>
+<p><!-- 導入 FileSaver 與 filereader --></p>
+<p>
+<script src="./../cmsimde/static/ace/FileSaver.min.js" type="text/javascript"></script>
+<script src="./../cmsimde/static/ace/filereader.js" type="text/javascript"></script>
+</p>
+<p><!-- 導入 ace --></p>
+<p>
+<script src="./../cmsimde/static/ace/ace.js" type="text/javascript"></script>
+<script src="./../cmsimde/static/ace/ext-language_tools.js" type="text/javascript"></script>
+<script src="./../cmsimde/static/ace/mode-python3.js" type="text/javascript"></script>
+<script src="./../cmsimde/static/ace/snippets/python.js" type="text/javascript"></script>
+</p>
+<p><!-- 請注意, 這裡使用 Javascript 將 localStorage["py_src"] 中存在近端瀏覽器的程式碼, 由使用者決定存檔名稱--></p>
+<p>
+<script type="text/javascript">
+function doSave(storage_id, filename){
+    var blob = new Blob([localStorage[storage_id]], {type: "text/plain;charset=utf-8"});
+    filename = document.getElementById(filename).value
+    saveAs(blob, filename+".py");
+}
+</script>
+</p>
+<p><!-- 導入 gearUtils-0.9.js Cango 齒輪繪圖程式庫 -->
+<script src="https://mde.tw/cp2021/cmsimde/static/Cango-24v03-min.js"></script>
+<script src="https://mde.tw/cp2021/cmsimde/static/gearUtils-09.js"></script>
+<script src="https://mde.tw/cp2021/cmsimde/static/SVGpathUtils-6v03-min.js"></script>
+<script src="https://mde.tw/cp2021/cmsimde/static/sylvester.js"></script>
+<script src="https://mde.tw/cp2021/cmsimde/static/PrairieDraw.js"></script>
+</p>
+<p><button id="red">將左右碰撞移動的紅色方塊, 改為先移動到水平畫面中心點位置後, 接著上下碰撞移動</button><button id="red2">紅點暫停/繼續</button></p>
+<p><!-- ######################  editor1 開始 ###################### --></p>
+<p><!-- 用來顯示程式碼的 editor 區域 --></p>
+<div id="kw_editor1" style="width: 600px; height: 300px;"></div>
+<p><!-- 以下的表單與按鈕與前面的 Javascript doSave 函式以及 FileSaver.min.js 互相配合 --></p>
+<p><!-- 存擋表單開始 --></p>
+<form><label>Filename: <input id="kw_filename" placeholder="input file name" type="text"/>.py</label> <input onclick="doSave('kw_py_src1', 'kw_filename1');" type="submit" value="Save"/></form>
+<p><!-- 存擋表單結束 --></p>
+<p></p>
+<p><!-- 執行與清除按鈕開始 --></p>
+<p><button id="kw_run1">Run</button> <button id="kw_show_console1">Output</button> <button id="kw_clear_console1">清除輸出區</button><button id="clear_bd1">清除繪圖區</button><button onclick="window.location.reload()">Reload</button></p>
+<p><!-- 執行與清除按鈕結束 --></p>
+<p></p>
+<p><!-- 程式執行 ouput 區 --></p>
+<div style="width: 100%; height: 100%;"><textarea autocomplete="off" id="kw_console1"></textarea></div>
+<p><!-- Brython 程式執行的結果, 都以 brython_div 作為切入位置 --></p>
+<!-- 這裡的畫布 id 為 brython_div -->
+<br />About << <a href='About.html'>Previous</a> <a href='text.html'>Next</a> >> text</div>
         
     <!-- footer -->
       <div class="container">
