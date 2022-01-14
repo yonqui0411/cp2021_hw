@@ -499,7 +499,7 @@ function doSave(storage_id, filename){
 <script src="https://mde.tw/cp2021/cmsimde/static/sylvester.js"></script>
 <script src="https://mde.tw/cp2021/cmsimde/static/PrairieDraw.js"></script>
 </p>
-<p><button id="snake">snake</button></p>
+<p><button id="snake">snake</button><button id="AIsnake">AIsnake</button></p>
 <p><!-- ######################  editor1 開始 ###################### --></p>
 <p><!-- 用來顯示程式碼的 editor 區域 --></p>
 <div id="kw_editor1" style="width: 600px; height: 300px;"></div>
@@ -583,6 +583,9 @@ class button2:
 snake_url = "https://gist.githubusercontent.com/yonqui0411/808efb0af8082935eea583cdda7f87b9/raw/f4ed6e3c4328ae735ea82ff5f6d48e310ad454c0/snake"
 snake= button2(snake_url)
 doc["snake"].bind('click', snake.do)
+AIsnake_url = "https://gist.githubusercontent.com/yonqui0411/fbcc4a2486eda2712707127d589af191/raw/0d9bb17a163858c23d44b287d34c477640a7b8ad/AIsnake"
+AIsnake= button2(AIsnake_url)
+doc["AIsnake"].bind('click', AIsnake.do)
 </script>
 </p><h1>期末考試</h1>
 <p></p>
